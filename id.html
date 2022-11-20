@@ -14,58 +14,59 @@
     <header>
         <h1>STUDENT'S ID CARD</h1>
     </header>
-    <div class="section">
-        <form onsubmit="return false">
-            <div class="formelement">
-                <label class="formlabel"> Enter Full Name:........... </label>
-                <input type="text" id="name" />
-            </div>
-            <br />
-            <div class="formelement">
-                <label class="formlabel"> Enter College Name:..... </label>
-                <input type="text" id="collegename" />
-            </div>
-            <br />
-            <div class="formelement">
-                <label class="formlabel"> Enter Location:.............. </label>
-                <input type="text" id="location" />
-            </div>
-            <br />
-
-            <div class="formelement">
-                <label class="formlabel"> Enter student Picture: </label>
-
-                <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" name="filename" />
-
-                <button onclick="generator()">Generate Card</button>
-            </div>
-        </form>
-    </div>
-    <div class="section2">
-        <div class="id-card-container" id="collegeCard">
-            <div class="centertext"><h2>Generated Card</h2></div>
-            <div class="card-container">
-                <div class="card-wrapper">
-                    <div class="user-card">
-                        <span class="user-photo" id="display-image">
-                            <div id="display-image"></div>
-                        </span>
-                    </div>
-                    <br>
-                    <div class="general-information">
-                        <div class="card-element card-name">
-                            <span>Name:</span>
-                            <span id="cardName"></span>
+    <div class="container">
+        <div class="section">
+            <form onsubmit="return false">
+                <div class="formelement">
+                    <label class="formlabel"> Enter Full Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="name" />
+                </div>
+                <br />
+                <div class="formelement">
+                    <label class="formlabel"> Enter College Name:&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="collegename" />
+                </div>
+                <br />
+                <div class="formelement">
+                    <label class="formlabel"> Enter Location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <input type="text" id="location" />
+                </div>
+                <br />
+    
+                <div class="formelement">
+                    <label class="formlabel"> Enter student Picture: </label>
+    
+                    <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)"></p>
+    
+                    <button onclick="generator()">Generate Card</button>
+                </div>
+            </form>
+        </div>
+        <div class="section2">
+            <div class="id-card-container" id="collegeCard">
+                <div class="centertext"><h2>Generated Card</h2></div>
+                <div class="card-container">
+                    <div class="card-wrapper">
+                        <div class="user-card">
+                            <span class="user-photo" id="display-image">
+                                <div id="display-image"> <img id="output" width="120px" height: "160px"/></div>
+                            </span>
                         </div>
                         <br>
-                        <div class="card-element college-name">
-                            <span>College Name:</span>
-                            <span id="cardCollegeName"></span>
-                        </div>
-                        <br>
-                        <div class="card-element college-name">
-                            <span>Location:</span>
-                            <span id="cardLocation"></span>
+                        <div class="general-information">
+                            <div class="card-element card-name">
+                                <h4>Name:</h4>
+                                <span id="cardName"></span>
+                            </div>
+                            
+                            <div class="card-element college-name">
+                            <h4>College Name:</h4> 
+                                <span id="cardCollegeName"></span>
+                            </div>
+                            <div class="card-element college-name">
+                                <h4>Location:</h4>
+                                <span id="cardLocation"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,5 +74,10 @@
         </div>
     </div>
 </body>
-
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
 </html>
