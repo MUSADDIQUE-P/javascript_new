@@ -1,12 +1,16 @@
-
+.container {
+  display: flex;
+  flex-direction: column;;
+}
 h1 {
     position:absolute;
-    left: 32%;
+    left: 50%;
     text-align: center;
     background: #b9b2b2;
     width: 500px;
     height: 50px;
     border-radius: 10px;
+    transform: translate(-50%, -50%);
   }
 
   .centertext {
@@ -87,9 +91,9 @@ h1 {
     justify-content: center;
     align-items: center;
   }
-  
+
   .general-information {
-    width: 60vw;
+    width: 480px;
     height: 100%;
     display: flex;
     background-color: #e8e9c5;
@@ -103,6 +107,18 @@ h1 {
     border: 1px solid rgb(80, 78, 78);
     background-position: center;
     background-size: cover;
+  }
+
+  .card-element {
+    margin-left: 10px;
+    margin-bottom: 15px;
+  }
+  
+  h5{
+    top: 80%;
+    left: 35%;
+    width: 200;
+    height: 250;
   }
   
   
